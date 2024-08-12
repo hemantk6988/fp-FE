@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './style.css'
 
 const Recipes = () => {
   const [recipes, setRecipes] = useState([]);
@@ -28,35 +29,38 @@ const Recipes = () => {
   };
 
   return (
-    <div>
-      <h2>Recipes</h2>
-      <form onSubmit={handleSubmit}>
-        <input
+    <div id="f1" >
+      <br/>
+      <h2 >Recipes</h2>
+      <form onSubmit={handleSubmit} >
+        <b>Title:</b> <br></br><input
           type="text"
-          placeholder="Title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-        />
-        <input
+          id="tex"
+        /><br/><br/>
+        <b>Ingredients:</b> <br/><input
           type="text"
-          placeholder="Ingredients (comma separated)"
           value={ingredients}
           onChange={(e) => setIngredients(e.target.value)}
-        />
-        <textarea
-          placeholder="Instructions"
+          id="tex1"
+        /><br/><br/>
+        <b>Instructions:</b> <br/> <textarea
           value={instructions}
           onChange={(e) => setInstructions(e.target.value)}
-        />
-        <button type="submit">Submit</button>
+          id="tex2"
+        /><br/><br/>
+        <button type="submit">Submit</button><br/><br/>
       </form>
       <div>
-        <h3>Recipe List</h3>
+        <h3>Recipe List:</h3>
         {recipes.map((recipe, index) => (
           <div key={index}>
-            <h4>{recipe.title}</h4>
-            <h5>{recipe.ingredients}</h5>
-            <p>{recipe.instructions}</p>
+            <ul id="fo">
+              <li><h4>{recipe.title}</h4>
+              <h5>{recipe.ingredients}</h5>
+              <p>{recipe.instructions}</p></li>
+            </ul>
           </div>
         ))}
       </div>

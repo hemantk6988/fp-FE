@@ -4,13 +4,17 @@ import Home from './components/Home';
 import Recipes from './components/Recipes';
 import CookingTips from './components/CookingTips';
 import CulinaryExperiences from './components/CulinaryExperiences';
+import './App.css';
 
 function App() {
   return (
     <Router>
-      <div>
-        <nav>
-          <ul>
+      <div id="d">
+        <header id="pic1">
+          {/* <img src="https://cdn.freebiesupply.com/logos/large/2x/h-m-food-systems-1-logo-png-transparent.png" id="pic"/> */}
+        </header>
+        <nav >
+          <ul id="list">
             <li><Link to="/">Home</Link></li>
             <li><Link to="/recipes">Recipes</Link></li>
             <li><Link to="/cooking-tips">Cooking Tips</Link></li>

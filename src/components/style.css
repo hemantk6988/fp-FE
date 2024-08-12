@@ -1,0 +1,37 @@
+ #tex{
+    width: 300px;
+    height: 25px;
+    background-color: white;
+    color: black;
+    border-radius: 7px;
+    border-color: black;
+    border: 1px solid ;
+}
+#tex1{
+    width: 300px;
+    height: 25px;
+    background-color: white;
+    color: black;
+    border-radius: 7px;
+    border-color: black;
+    border: 1px solid ;
+}
+#tex2{
+    width: 300px;
+    height: 100px;
+    background-color: white;
+    color: black;
+    border-radius: 7px;
+    border-color: black;
+    border: 1px solid ;
+}
+#fo{
+    margin-left: 15px;
+}
+#f1{
+    margin-left: 20px;
+}
+#hp{
+    margin-top: 40px;
+    text-align: center;
+}

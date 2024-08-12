@@ -26,27 +26,28 @@ const CulinaryExperiences = () => {
   };
 
   return (
-    <div>
-      <h2>Culinary Experiences</h2>
+    <div id="f1">
+      <br/><h2>Culinary Experiences</h2>
       <form onSubmit={handleSubmit}>
-        <textarea
-          placeholder="Share your culinary experience"
+        <b>Share your experience: <br/></b><textarea
           value={experience}
           onChange={(e) => setExperience(e.target.value)}
-        />
-        <input
+          id="tex2"
+        /><br/>
+        <b>Your Name:</b> <br/><input
           type="text"
-          placeholder="Your name"
+          placeholder=""
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
-        />
+          id="tex"
+        /><br/><br/>
         <button type="submit">Submit</button>
       </form>
       <div>
-        <h3>Shared Experiences</h3>
+        <h3>Shared Experiences:</h3>
         {experiences.map((item, index) => (
           <div key={index}>
-            <p><strong>{item.experience}</strong> - {item.author}</p>
+            <p id="fo"><strong>{item.experience}</strong> - {item.author}</p>
           </div>
         ))}
       </div>

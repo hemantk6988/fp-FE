@@ -26,28 +26,27 @@ const CookingTips = () => {
   };
 
   return (
-    <div>
-      <h2>Cooking Tips</h2>
+    <div id="f1">
+      <br/><h2>Cooking Tips</h2><br/>
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Enter your tip"
+        <b>Enter your Tip:</b> <br/><textarea
           value={tip}
           onChange={(e) => setTip(e.target.value)}
-        />
-        <input
+          id="tex2"
+        /><br/>
+        <b>Your Name:</b> <br/><input
           type="text"
-          placeholder="Your name"
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
-        />
+          id="tex"
+        /><br/><br/>
         <button type="submit">Submit</button>
       </form>
       <div>
-        <h3>Submitted Tips</h3>
+        <br/><h3>Submitted Tips:</h3>
         {tips.map((item, index) => (
           <div key={index}>
-            <p><strong>{item.tip}</strong> - {item.author}</p>
+            <p id="fo"><strong>{item.tip}</strong> - {item.author}</p>
           </div>
         ))}
       </div>
