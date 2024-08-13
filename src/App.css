@@ -17,12 +17,13 @@ nav>ul{
 nav>ul>li{
   
   padding-right: 40px;
-  /* border-color: white; */
   border-radius: 20px;
   color: white;
-  
   padding-bottom:20px ;
+  padding-left: 5px;
+  padding-top: 10px;
   margin-top: 55px;
+  margin-right: 20px;
 }
 
 
@@ -31,13 +32,14 @@ nav>ul>li{
   width: 150px;
   margin-top: 10px;
   margin-bottom: 2px;
+
 }
 
 #foot{
-  background-color: rgb(30, 30, 30);
-  color: white;
+  /* background-color: rgb(30, 30, 30); */
   position: fixed;
   bottom: 0;
   width: 99%;
   margin-left: 0;
+  font-weight: 600;
 }

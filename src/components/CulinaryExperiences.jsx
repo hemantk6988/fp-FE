@@ -7,7 +7,7 @@ const CulinaryExperiences = () => {
   const [author, setAuthor] = useState('');
 
   useEffect(() => {
-    axios.get('https://fp-be.onrender.com/api/culinaryexperiences')
+    axios.get('http://localhost:5000/api/culinary-experiences')
       .then(res => setExperiences(res.data))
       .catch(err => console.log(err));
   }, []);
@@ -16,10 +16,19 @@ const CulinaryExperiences = () => {
     e.preventDefault();
     const newExperience = { experience, author };
     try {
-      const res = await axios.post('https://fp-be.onrender.com/api/culinaryexperiences', newExperience);
+      const res = await axios.post('http://localhost:5000/api/culinary-experiences', newExperience);
       setExperiences([...experiences, res.data]);
       setExperience('');
       setAuthor('');
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const handleDelete = async (id) => {
+    try {
+      await axios.delete(`http://localhost:5000/api/culinary-experiences/${id}`);
+      setExperiences(experiences.filter(experience => experience._id !== id));
     } catch (err) {
       console.log(err);
     }
@@ -43,11 +52,12 @@ const CulinaryExperiences = () => {
         /><br/><br/>
         <button type="submit">Submit</button>
       </form>
-      <div id="hh">
-        <br/><h3>Shared Experiences:</h3>
-        {experiences.map((item, index) => (
-          <div key={index}>
-            <p id="fo"><strong>{item.experience}</strong> - {item.author}</p>
+      <div>
+        <br/><h3>Culinary Experiences List:</h3>
+        {experiences.map((experience) => (
+          <div key={experience._id}>
+            <p>{experience.experience}<i>- {experience.author}</i></p>
+            <button onClick={() => handleDelete(experience._id)}>Delete</button>
           </div>
         ))}
       </div>

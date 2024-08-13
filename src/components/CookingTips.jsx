@@ -7,7 +7,7 @@ const CookingTips = () => {
   const [author, setAuthor] = useState('');
 
   useEffect(() => {
-    axios.get('https://fp-be.onrender.com/api/cookingtips')
+    axios.get('http://localhost:5000/api/cooking-tips')
       .then(res => setTips(res.data))
       .catch(err => console.log(err));
   }, []);
@@ -16,7 +16,7 @@ const CookingTips = () => {
     e.preventDefault();
     const newTip = { tip, author };
     try {
-      const res = await axios.post('https://fp-be.onrender.com/api/cookingtips', newTip);
+      const res = await axios.post('http://localhost:5000/api/cooking-tips', newTip);
       setTips([...tips, res.data]);
       setTip('');
       setAuthor('');
@@ -25,8 +25,17 @@ const CookingTips = () => {
     }
   };
 
+  const handleDelete = async (id) => {
+    try {
+      await axios.delete(`http://localhost:5000/api/cooking-tips/${id}`);
+      setTips(tips.filter(tip => tip._id !== id));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
-    <div id="f1">
+    <div>
       <h2 id="ka">Cooking Tips</h2>
       <form onSubmit={handleSubmit} class="project-form">
         <b>Enter your Tip:</b> <br/><textarea
@@ -42,11 +51,14 @@ const CookingTips = () => {
         /><br/><br/>
         <button type="submit">Submit</button>
       </form>
-      <div id="hh">
-        <br/><h3>Submitted Tips:</h3>
-        {tips.map((item, index) => (
-          <div key={index}>
-            <p id="fo"><strong>{item.tip}</strong> - {item.author}</p>
+
+      <div id='hh'>
+        <br/>
+        <h3>Cooking Tips List:</h3>
+        {tips.map((tip) => (
+          <div key={tip._id}>
+            <p id='fo'>{tip.tip}- <i>{tip.author}</i></p>
+            <button onClick={() => handleDelete(tip._id)}>Delete</button>
           </div>
         ))}
       </div>

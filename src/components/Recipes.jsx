@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './style.css'
 
 const Recipes = () => {
   const [recipes, setRecipes] = useState([]);
@@ -9,7 +8,7 @@ const Recipes = () => {
   const [instructions, setInstructions] = useState('');
 
   useEffect(() => {
-    axios.get('https://fp-be.onrender.com/api/recipes')
+    axios.get('http://localhost:5000/api/recipes')
       .then(res => setRecipes(res.data))
       .catch(err => console.log(err));
   }, []);
@@ -18,47 +17,57 @@ const Recipes = () => {
     e.preventDefault();
     const newRecipe = { title, ingredients: ingredients.split(','), instructions };
     try {
-      await axios.post('https://fp-be.onrender.com/api/recipes', newRecipe);
+      const res = await axios.post('http://localhost:5000/api/recipes', newRecipe);
+      setRecipes([...recipes, res.data]);
       setTitle('');
       setIngredients('');
       setInstructions('');
-      setRecipes([...recipes, newRecipe]);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const handleDelete = async (id) => {
+    try {
+      await axios.delete(`http://localhost:5000/api/recipes/${id}`);
+      setRecipes(recipes.filter(recipe => recipe._id !== id));
     } catch (err) {
       console.log(err);
     }
   };
 
   return (
-    <div id="f1" >
-      <h2 id="ka">Recipes</h2>
+    <div>
+      <h2 id='ka'>Recipes</h2>
       <form onSubmit={handleSubmit} class="project-form">
-        <b>Title:</b> <br></br><input
+        <b>Title:</b> <input
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           id="tex"
-        /><br/><br/>
-        <b>Ingredients:</b> <br/><input
+        /><br/>
+        <b>Ingredients:</b> <input
           type="text"
           value={ingredients}
           onChange={(e) => setIngredients(e.target.value)}
           id="tex1"
-        /><br/><br/>
-        <b>Instructions:</b> <br/> <textarea
+        /><br/>
+        <b>Instructions:</b>  <textarea
           value={instructions}
           onChange={(e) => setInstructions(e.target.value)}
           id="tex2"
-        /><br/><br/>
+        /><br/>
         <button type="submit">Submit</button><br/><br/>
       </form>
-      <div id="hh">
-        <h3>Recipe List:</h3>
-        {recipes.map((recipe, index) => (
-          <div key={index}>
-            <ul id="fo">
-              <li><h4>{recipe.title}</h4>
-              <h5>{recipe.ingredients}</h5>
-              <p>{recipe.instructions}</p></li>
+      <div id='hh'>
+      <br></br><h3>Recipe List:</h3>
+        {recipes.map((recipe) => (
+          <div key={recipe._id}>
+            <ul>
+            <li><h4>{recipe.title}</h4>
+            <h5>{recipe.ingredients}</h5>
+            <p>{recipe.instructions}</p></li>
+            <button onClick={() => handleDelete(recipe._id)}>Delete</button><br/><br/><br/><br/>
             </ul>
           </div>
         ))}

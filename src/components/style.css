@@ -1,5 +1,5 @@
  #tex{
-    width: 494px;
+    width: 194px;
     height: 25px;
     background-color: white;
     color: black;
@@ -8,7 +8,7 @@
     border: 1px solid ;
 }
 #tex1{
-    width: 494px;
+    width: 194px;
     height: 25px;
     background-color: white;
     color: black;
@@ -17,7 +17,7 @@
     border: 1px solid ;
 }
 #tex2{
-    width: 494px;
+    width: 394px;
     height: 100px;
     background-color: white;
     color: black;
@@ -39,7 +39,20 @@
 .project-form {
     display: flex;
     flex-direction: column;
-    max-width: 500px;
+    max-width: 400px;
+    max-height: 400px;
+    margin: 2em auto;
+    padding: 2em;
+    background:rgb(246, 246, 246) ;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(3, 3, 3, 0.1);
+}
+.project-forms {
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+    max-height: 400px;
     margin: 2em auto;
     padding: 2em;
     background:rgb(246, 246, 246) ;
@@ -52,5 +65,5 @@
     text-align: center;
 }
 #hh{
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
