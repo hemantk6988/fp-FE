@@ -31,8 +31,8 @@ const Recipes = () => {
   return (
     <div id="f1" >
       <br/>
-      <h2 >Recipes</h2>
-      <form onSubmit={handleSubmit} >
+      <h2 id="ka">Recipes</h2>
+      <form onSubmit={handleSubmit} class="project-form">
         <b>Title:</b> <br></br><input
           type="text"
           value={title}
@@ -52,7 +52,7 @@ const Recipes = () => {
         /><br/><br/>
         <button type="submit">Submit</button><br/><br/>
       </form>
-      <div>
+      <div id="hh">
         <h3>Recipe List:</h3>
         {recipes.map((recipe, index) => (
           <div key={index}>

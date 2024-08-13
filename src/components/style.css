@@ -1,5 +1,5 @@
  #tex{
-    width: 300px;
+    width: 594px;
     height: 25px;
     background-color: white;
     color: black;
@@ -8,7 +8,7 @@
     border: 1px solid ;
 }
 #tex1{
-    width: 300px;
+    width: 594px;
     height: 25px;
     background-color: white;
     color: black;
@@ -17,7 +17,7 @@
     border: 1px solid ;
 }
 #tex2{
-    width: 300px;
+    width: 594px;
     height: 100px;
     background-color: white;
     color: black;
@@ -34,4 +34,23 @@
 #hp{
     margin-top: 40px;
     text-align: center;
+}
+
+.project-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 2em auto;
+    padding: 2em;
+    background:rgb(248, 245, 240) ;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(3, 3, 3, 0.1);
+}
+
+#ka{
+    text-align: center;
+}
+#hh{
+    margin-bottom: 100px;
 }

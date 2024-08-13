@@ -4,11 +4,11 @@ import './style.css'
 const Home = () => {
   return (
     <div >
-      <br/><br/><br/>
+      <br/><br/><br/><br/>
       <div>
       <h1 id="hp">Welcome to the Recipe Sharing Community</h1>
       <p id="hp">
-        Explore and share your favorite recipes, cooking tips, and culinary experiences with others.
+        Share your favorite recipes, cooking tips, and culinary experiences with others.
       </p>
       </div> 
     </div>

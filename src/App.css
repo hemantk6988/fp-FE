@@ -1,12 +1,17 @@
 #list{
   list-style-type: none;  
 }
+#abc{
+  margin-right:auto;
+  font-weight: 600;
+  font-size: x-large;
+}
 
 nav>ul{
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
   display: flex;
   flex-direction: row-reverse;
-  
+  color: black;
 }
 
 nav>ul>li{
@@ -15,12 +20,22 @@ nav>ul>li{
   /* border-color: white; */
   border-radius: 20px;
   color: white;
-  padding-top:20px ;
+  
   padding-bottom:20px ;
+  margin-top: 27px;
 }
 
 
 #pic{
-  height: 200px;
-  width: 250px;
+  height: 70px;
+  width: 140px;
+  margin-top: 10px;
+  margin-bottom: 2px;
+}
+#foot{
+  background-color: rgb(27, 27, 27);
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 98.9%;
 }

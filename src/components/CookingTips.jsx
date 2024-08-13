@@ -27,8 +27,8 @@ const CookingTips = () => {
 
   return (
     <div id="f1">
-      <br/><h2>Cooking Tips</h2><br/>
-      <form onSubmit={handleSubmit}>
+      <br/><h2 id="ka">Cooking Tips</h2>
+      <form onSubmit={handleSubmit} class="project-form">
         <b>Enter your Tip:</b> <br/><textarea
           value={tip}
           onChange={(e) => setTip(e.target.value)}
@@ -42,7 +42,7 @@ const CookingTips = () => {
         /><br/><br/>
         <button type="submit">Submit</button>
       </form>
-      <div>
+      <div id="hh">
         <br/><h3>Submitted Tips:</h3>
         {tips.map((item, index) => (
           <div key={index}>
