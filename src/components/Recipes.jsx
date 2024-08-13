@@ -60,6 +60,7 @@ const Recipes = () => {
               <li><h4>{recipe.title}</h4>
               <h5>{recipe.ingredients}</h5>
               <p>{recipe.instructions}</p></li>
+              <p>Thank You for Responding</p>
             </ul>
           </div>
         ))}
