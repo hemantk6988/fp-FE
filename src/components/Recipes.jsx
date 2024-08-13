@@ -30,7 +30,6 @@ const Recipes = () => {
 
   return (
     <div id="f1" >
-      <br/>
       <h2 id="ka">Recipes</h2>
       <form onSubmit={handleSubmit} class="project-form">
         <b>Title:</b> <br></br><input

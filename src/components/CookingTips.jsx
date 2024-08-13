@@ -27,7 +27,7 @@ const CookingTips = () => {
 
   return (
     <div id="f1">
-      <br/><h2 id="ka">Cooking Tips</h2>
+      <h2 id="ka">Cooking Tips</h2>
       <form onSubmit={handleSubmit} class="project-form">
         <b>Enter your Tip:</b> <br/><textarea
           value={tip}
