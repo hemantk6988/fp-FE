@@ -7,7 +7,7 @@ const CulinaryExperiences = () => {
   const [author, setAuthor] = useState('');
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/culinary-experiences')
+    axios.get('https://fp-be.onrender.com/api/culinary-experiences')
       .then(res => setExperiences(res.data))
       .catch(err => console.log(err));
   }, []);
@@ -16,7 +16,7 @@ const CulinaryExperiences = () => {
     e.preventDefault();
     const newExperience = { experience, author };
     try {
-      const res = await axios.post('http://localhost:5000/api/culinary-experiences', newExperience);
+      const res = await axios.post('https://fp-be.onrender.com/api/culinary-experiences', newExperience);
       setExperiences([...experiences, res.data]);
       setExperience('');
       setAuthor('');
@@ -27,7 +27,7 @@ const CulinaryExperiences = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/culinary-experiences/${id}`);
+      await axios.delete(`https://fp-be.onrender.com/api/culinary-experiences/${id}`);
       setExperiences(experiences.filter(experience => experience._id !== id));
     } catch (err) {
       console.log(err);

@@ -8,7 +8,7 @@ const SearchRecipePage = () => {
   const handleSearch = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.get(`http://localhost:5000/api/searchable-recipes/search?q=${query}`);
+      const res = await axios.get(`https://fp-be.onrender.com/api/searchable-recipes/search?q=${query}`);
       setResults(res.data);
     } catch (err) {
       console.log(err);

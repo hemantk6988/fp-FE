@@ -7,7 +7,7 @@ const CookingTips = () => {
   const [author, setAuthor] = useState('');
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/cooking-tips')
+    axios.get('https://fp-be.onrender.com/api/cooking-tips')
       .then(res => setTips(res.data))
       .catch(err => console.log(err));
   }, []);
@@ -16,7 +16,7 @@ const CookingTips = () => {
     e.preventDefault();
     const newTip = { tip, author };
     try {
-      const res = await axios.post('http://localhost:5000/api/cooking-tips', newTip);
+      const res = await axios.post('https://fp-be.onrender.com/api/cooking-tips', newTip);
       setTips([...tips, res.data]);
       setTip('');
       setAuthor('');
@@ -27,7 +27,7 @@ const CookingTips = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/cooking-tips/${id}`);
+      await axios.delete(`https://fp-be.onrender.com/api/cooking-tips/${id}`);
       setTips(tips.filter(tip => tip._id !== id));
     } catch (err) {
       console.log(err);
