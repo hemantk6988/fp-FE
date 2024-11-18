@@ -8,7 +8,7 @@ const Recipes = () => {
   const [instructions, setInstructions] = useState('');
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/recipes')
+    axios.get('https://fp-be.onrender.com/api/recipes')
       .then(res => setRecipes(res.data))
       .catch(err => console.log(err));
   }, []);
@@ -17,7 +17,7 @@ const Recipes = () => {
     e.preventDefault();
     const newRecipe = { title, ingredients: ingredients.split(','), instructions };
     try {
-      const res = await axios.post('http://localhost:5000/api/recipes', newRecipe);
+      const res = await axios.post('https://fp-be.onrender.com/api/recipes', newRecipe);
       setRecipes([...recipes, res.data]);
       setTitle('');
       setIngredients('');
@@ -29,7 +29,7 @@ const Recipes = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/recipes/${id}`);
+      await axios.delete(`https://fp-be.onrender.com/api/recipes/${id}`);
       setRecipes(recipes.filter(recipe => recipe._id !== id));
     } catch (err) {
       console.log(err);
