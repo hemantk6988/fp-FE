@@ -19,7 +19,6 @@ function App() {
             <li><Link to="/recipes">Add Recipes</Link></li>
             <li><Link to="/cooking-tips">Cooking Tips</Link></li>
             <li><Link to="/culinary-experiences">Culinary Experiences</Link></li>
-            <li><Link to="/search-recipes">Search Recipes</Link></li>
             <li><Link to="/chatbot">Chatbot</Link></li>
             <label id='abc'><Link to="/"><img src="https://cdn.freebiesupply.com/logos/large/2x/food-network-1-logo-png-transparent.png" id='pic'/></Link></label>
           </ul>
